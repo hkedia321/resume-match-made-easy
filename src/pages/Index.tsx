@@ -14,7 +14,7 @@ const Index = () => {
         </div>
         
         <footer className="mt-16 text-center text-gray-500 text-sm">
-          <p>Resume Review App © 2025 | Built to optimize job applications</p>
+          <p>Resume Lens © 2025 | Built to optimize job applications</p>
         </footer>
       </div>
     </div>
