@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "lucide-react";
+import { FileSearch } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const JobDescriptionInput: React.FC = () => {
@@ -61,7 +61,7 @@ const JobDescriptionInput: React.FC = () => {
     <Card className="shadow-md border-resume-blue/20">
       <CardContent className="p-6">
         <h2 className="text-lg font-semibold mb-4 flex items-center">
-          <Link className="h-5 w-5 mr-2 text-resume-blue" />
+          <FileSearch className="h-5 w-5 mr-2 text-resume-blue" />
           Job Description URL
         </h2>
         

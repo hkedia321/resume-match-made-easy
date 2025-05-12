@@ -9,7 +9,7 @@ const Index = () => {
       <div className="container mx-auto py-8 px-4">
         <Hero />
         
-        <div className="my-12">
+        <div className="my-16">
           <ReviewContainer />
         </div>
         
