@@ -8,7 +8,7 @@ import { FileText, FileSearch, ArrowDown } from "lucide-react";
 const ReviewContainer: React.FC = () => {
   return (
     <div id="upload-section" className="max-w-3xl mx-auto px-4">
-      <div className="flex flex-col gap-8 relative">
+      <div className="flex flex-col gap-12 relative">
         {/* Step 1 */}
         <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <div className="flex items-center mb-3">
@@ -21,7 +21,7 @@ const ReviewContainer: React.FC = () => {
         </div>
         
         {/* Connection line 1-2 */}
-        <div className="absolute left-3.5 top-24 h-24 border-l-2 border-dashed border-resume-blue/50 z-0"></div>
+        <div className="absolute left-3.5 top-[150px] h-[120px] border-l-2 border-dashed border-resume-blue/50 z-0"></div>
         
         {/* Step 2 */}
         <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -35,7 +35,7 @@ const ReviewContainer: React.FC = () => {
         </div>
         
         {/* Connection line 2-3 */}
-        <div className="absolute left-3.5 top-64 h-28 border-l-2 border-dashed border-resume-blue/50 z-0"></div>
+        <div className="absolute left-3.5 top-[360px] h-[120px] border-l-2 border-dashed border-resume-blue/50 z-0"></div>
         
         {/* Step 3 */}
         <div className="animate-fade-in" style={{ animationDelay: "0.6s" }}>
