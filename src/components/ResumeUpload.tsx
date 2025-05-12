@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,7 +35,7 @@ const ResumeUpload: React.FC = () => {
         });
         return;
       }
-      
+
       setFile(selectedFile);
       toast({
         title: "Resume uploaded",
@@ -57,7 +56,7 @@ const ResumeUpload: React.FC = () => {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
-    
+
     const droppedFile = e.dataTransfer.files[0];
     handleSelectedFile(droppedFile);
   };
@@ -76,14 +75,11 @@ const ResumeUpload: React.FC = () => {
   return (
     <Card className="shadow-md border-resume-blue/20">
       <CardContent className="p-6">
-        <h2 className="text-lg font-semibold mb-4 flex items-center">
-          <FileText className="h-5 w-5 mr-2 text-resume-blue" />
-          Upload Your Resume
-        </h2>
-        
         {!file ? (
           <div
-            className={`upload-zone ${isDragging ? "upload-zone-active" : ""}`}
+            className={`upload-zone cursor-pointer ${
+              isDragging ? "upload-zone-active" : ""
+            }`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
@@ -118,10 +114,10 @@ const ResumeUpload: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
-              <Button 
+
+              <Button
                 variant="outline"
-                size="sm" 
+                size="sm"
                 onClick={handleRemoveFile}
                 className="text-xs border-resume-blue/50 text-resume-blue hover:bg-resume-blue/10"
               >

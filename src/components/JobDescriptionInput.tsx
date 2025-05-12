@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,7 +14,7 @@ const JobDescriptionInput: React.FC = () => {
     if (!input) {
       return true; // Empty is valid (not submitted yet)
     }
-    
+
     try {
       const parsedUrl = new URL(input);
       return parsedUrl.protocol === "http:" || parsedUrl.protocol === "https:";
@@ -32,7 +31,7 @@ const JobDescriptionInput: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!url) {
       toast({
         title: "URL required",
@@ -41,7 +40,7 @@ const JobDescriptionInput: React.FC = () => {
       });
       return;
     }
-    
+
     if (!isValidUrl) {
       toast({
         title: "Invalid URL",
@@ -50,7 +49,7 @@ const JobDescriptionInput: React.FC = () => {
       });
       return;
     }
-    
+
     toast({
       title: "Job description added",
       description: "Job description URL has been added successfully",
@@ -60,11 +59,6 @@ const JobDescriptionInput: React.FC = () => {
   return (
     <Card className="shadow-md border-resume-blue/20">
       <CardContent className="p-6">
-        <h2 className="text-lg font-semibold mb-4 flex items-center">
-          <FileSearch className="h-5 w-5 mr-2 text-resume-blue" />
-          Job Description URL
-        </h2>
-        
         <form onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
@@ -83,9 +77,9 @@ const JobDescriptionInput: React.FC = () => {
                 </p>
               )}
             </div>
-            
-            <Button 
-              type="submit" 
+
+            <Button
+              type="submit"
               className="w-full bg-resume-blue hover:bg-resume-blue-dark"
             >
               Add Job Description
