@@ -5,7 +5,7 @@ import ReviewContainer from "@/components/ReviewContainer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-resume-purple/5 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-resume-blue/5 to-white">
       <div className="container mx-auto py-8 px-4">
         <Hero />
         

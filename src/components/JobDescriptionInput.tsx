@@ -58,10 +58,10 @@ const JobDescriptionInput: React.FC = () => {
   };
 
   return (
-    <Card className="shadow-md border-resume-purple/20 mt-6">
+    <Card className="shadow-md border-resume-blue/20">
       <CardContent className="p-6">
         <h2 className="text-lg font-semibold mb-4 flex items-center">
-          <Link className="h-5 w-5 mr-2 text-resume-purple" />
+          <Link className="h-5 w-5 mr-2 text-resume-blue" />
           Job Description URL
         </h2>
         
@@ -73,7 +73,7 @@ const JobDescriptionInput: React.FC = () => {
                 placeholder="https://example.com/job-posting"
                 value={url}
                 onChange={handleUrlChange}
-                className={`border-resume-purple/30 focus:border-resume-purple focus:ring-resume-purple ${
+                className={`border-resume-blue/30 focus:border-resume-blue focus:ring-resume-blue ${
                   !isValidUrl && url ? "border-red-500" : ""
                 }`}
               />
@@ -86,7 +86,7 @@ const JobDescriptionInput: React.FC = () => {
             
             <Button 
               type="submit" 
-              className="w-full bg-resume-purple hover:bg-resume-purple-dark"
+              className="w-full bg-resume-blue hover:bg-resume-blue-dark"
             >
               Add Job Description
             </Button>

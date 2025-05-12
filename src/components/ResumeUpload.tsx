@@ -74,10 +74,10 @@ const ResumeUpload: React.FC = () => {
   };
 
   return (
-    <Card className="shadow-md border-resume-purple/20">
+    <Card className="shadow-md border-resume-blue/20">
       <CardContent className="p-6">
         <h2 className="text-lg font-semibold mb-4 flex items-center">
-          <FileText className="h-5 w-5 mr-2 text-resume-purple" />
+          <FileText className="h-5 w-5 mr-2 text-resume-blue" />
           Upload Your Resume
         </h2>
         
@@ -97,7 +97,7 @@ const ResumeUpload: React.FC = () => {
               className="hidden"
             />
             <div className="text-center">
-              <Upload className="h-10 w-10 mx-auto mb-4 text-resume-purple" />
+              <Upload className="h-10 w-10 mx-auto mb-4 text-resume-blue" />
               <p className="text-sm font-medium mb-1">
                 Drag and drop your resume or click to browse
               </p>
@@ -107,10 +107,10 @@ const ResumeUpload: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-resume-purple/10 rounded-lg p-4">
+          <div className="bg-resume-blue/10 rounded-lg p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <FileText className="h-8 w-8 text-resume-purple mr-3" />
+                <FileText className="h-8 w-8 text-resume-blue mr-3" />
                 <div>
                   <p className="font-medium text-sm">{file.name}</p>
                   <p className="text-xs text-gray-500">
@@ -123,7 +123,7 @@ const ResumeUpload: React.FC = () => {
                 variant="outline"
                 size="sm" 
                 onClick={handleRemoveFile}
-                className="text-xs border-resume-purple/50 text-resume-purple hover:bg-resume-purple/10"
+                className="text-xs border-resume-blue/50 text-resume-blue hover:bg-resume-blue/10"
               >
                 Remove
               </Button>

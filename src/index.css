@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 252 94% 52%;
+    --primary: 214 94% 49%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 252 94% 52%;
+    --ring: 214 94% 49%;
 
     --radius: 0.75rem;
   }
@@ -80,14 +80,14 @@
   }
   
   .resume-gradient-bg {
-    @apply bg-gradient-to-b from-resume-purple-light via-resume-purple to-resume-blue;
+    @apply bg-gradient-to-b from-resume-blue-light via-resume-blue to-resume-purple;
   }
   
   .upload-zone {
-    @apply border-2 border-dashed border-resume-purple/40 bg-resume-purple/5 rounded-lg p-8 transition-all duration-300;
+    @apply border-2 border-dashed border-resume-blue/40 bg-resume-blue/5 rounded-lg p-8 transition-all duration-300;
   }
   
   .upload-zone-active {
-    @apply border-resume-purple bg-resume-purple/10;
+    @apply border-resume-blue bg-resume-blue/10;
   }
 }
