@@ -4,7 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FileText, Upload } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const ResumeUpload: React.FC = () => {
+interface ResumeUploadProps {
+  onFileUpload: (file: File) => void;
+}
+
+const ResumeUpload: React.FC<ResumeUploadProps> = ({ onFileUpload }) => {
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -37,6 +41,7 @@ const ResumeUpload: React.FC = () => {
       }
 
       setFile(selectedFile);
+      onFileUpload(selectedFile);
       toast({
         title: "Resume uploaded",
         description: `${selectedFile.name} has been uploaded successfully`,

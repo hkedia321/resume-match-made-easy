@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FileSearch } from "lucide-react";
+import { FileSearch, Pencil } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const JobDescriptionInput: React.FC = () => {
+interface JobDescriptionInputProps {
+  onUrlSubmit: (url: string) => void;
+}
+
+const JobDescriptionInput: React.FC<JobDescriptionInputProps> = ({
+  onUrlSubmit,
+}) => {
   const [url, setUrl] = useState("");
   const [isValidUrl, setIsValidUrl] = useState(true);
+  const [isEditing, setIsEditing] = useState(true);
   const { toast } = useToast();
 
   const validateUrl = (input: string) => {
@@ -50,10 +57,12 @@ const JobDescriptionInput: React.FC = () => {
       return;
     }
 
+    onUrlSubmit(url);
     toast({
       title: "Job description added",
       description: "Job description URL has been added successfully",
     });
+    setIsEditing(false);
   };
 
   return (
@@ -61,7 +70,7 @@ const JobDescriptionInput: React.FC = () => {
       <CardContent className="p-6">
         <form onSubmit={handleSubmit}>
           <div className="space-y-4">
-            <div>
+            <div className="relative flex items-center">
               <Input
                 type="text"
                 placeholder="https://example.com/job-posting"
@@ -69,20 +78,31 @@ const JobDescriptionInput: React.FC = () => {
                 onChange={handleUrlChange}
                 className={`border-resume-blue/30 focus:border-resume-blue focus:ring-resume-blue ${
                   !isValidUrl && url ? "border-red-500" : ""
-                }`}
+                } ${!isEditing ? "bg-gray-100 cursor-not-allowed" : ""}`}
+                disabled={!isEditing}
               />
-              {!isValidUrl && url && (
-                <p className="text-red-500 text-xs mt-1">
-                  Please enter a valid URL
-                </p>
+              {!isEditing && (
+                <button
+                  type="button"
+                  onClick={() => setIsEditing(true)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-resume-blue hover:text-resume-blue-dark bg-white rounded-full border border-resume-blue/20 shadow-sm"
+                  aria-label="Edit URL"
+                >
+                  <Pencil size={18} />
+                </button>
               )}
             </div>
-
+            {!isValidUrl && url && (
+              <p className="text-red-500 text-xs mt-1">
+                Please enter a valid URL
+              </p>
+            )}
             <Button
               type="submit"
               className="w-full bg-resume-blue hover:bg-resume-blue-dark"
+              disabled={!isEditing}
             >
-              Add Job Description
+              {isEditing ? "Add Job Description" : "Added"}
             </Button>
           </div>
         </form>
