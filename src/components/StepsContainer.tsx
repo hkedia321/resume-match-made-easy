@@ -24,6 +24,7 @@ const StepsContainer: React.FC = () => {
 
   const handleJobUrlSubmit = (url: string) => {
     setJobUrl(url);
+    compareResumeWithJob();
   };
 
   const compareResumeWithJob = async () => {
@@ -170,56 +171,71 @@ const StepsContainer: React.FC = () => {
                     />
                   </div>
                   <h3
-                    className="text-xl font-bold text-resume-blue mb-2"
+                    className="text-2xl font-bold text-resume-blue mb-2"
                     style={{ color: color }}
                   >
                     {comparisonResult.match_score}% Match!
                   </h3>
+                  <h3 className="text-xl font-bold text-resume-blue mb-2">
+                    {comparisonResult.title}
+                  </h3>
                   <div className="w-full space-y-4 mt-4">
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-left w-full">
-                      <h4 className="font-semibold text-green-700 mb-2">
+                      <h3 className="font-semibold text-green-700 text-lg mb-2">
                         Key Strengths
-                      </h4>
-                      <ul className="list-disc list-inside text-green-800 text-sm">
+                      </h3>
+                      <ul className="list-disc space-y-3 list-inside text-green-800 text-md gap-2">
                         {comparisonResult.key_strengths?.map(
                           (item: string, idx: number) => (
-                            <li key={idx}>{item}</li>
+                            <li className="flex items-start text-md" key={idx}>
+                              <span className="mr-2">•</span>
+                              <span>{item}</span>
+                            </li>
                           )
                         )}
                       </ul>
                     </div>
                     <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-left w-full">
-                      <h4 className="font-semibold text-red-700 mb-2">
+                      <h3 className="font-semibold text-red-700 text-lg mb-2">
                         Areas for Improvement
-                      </h4>
-                      <ul className="list-disc list-inside text-red-800 text-sm">
+                      </h3>
+                      <ul className="list-disc space-y-3 list-inside text-red-800 text-md gap-2">
                         {comparisonResult.areas_for_improvement?.map(
                           (item: string, idx: number) => (
-                            <li key={idx}>{item}</li>
+                            <li className="flex items-start text-md" key={idx}>
+                              <span className="mr-2">•</span>
+                              <span>{item}</span>
+                            </li>
                           )
                         )}
                       </ul>
                     </div>
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-left w-full">
-                      <h4 className="font-semibold text-blue-700 mb-2">
+                      <h4 className="font-semibold text-lg text-blue-700 mb-2">
                         Resume Suggestions
                       </h4>
-                      <ul className="list-disc list-inside text-blue-800 text-sm">
+                      <ul className="list-disc space-y-3 list-inside text-blue-800 text-md gap-2">
                         {comparisonResult.resume_suggestions?.map(
                           (item: string, idx: number) => (
-                            <li key={idx}>{item}</li>
+                            <li className="flex items-start text-md" key={idx}>
+                              <span className="mr-2">•</span>
+                              <span>{item}</span>
+                            </li>
                           )
                         )}
                       </ul>
                     </div>
                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-left w-full">
-                      <h4 className="font-semibold text-yellow-700 mb-2">
+                      <h4 className="font-semibold text-lg text-yellow-700 mb-2">
                         Skills to Develop
                       </h4>
-                      <ul className="list-disc list-inside text-yellow-800 text-sm">
+                      <ul className="list-disc space-y-3 list-inside text-yellow-800 text-md gap-2">
                         {comparisonResult.skills_to_develop?.map(
                           (item: string, idx: number) => (
-                            <li key={idx}>{item}</li>
+                            <li className="flex items-start text-md" key={idx}>
+                              <span className="mr-2">•</span>
+                              <span>{item}</span>
+                            </li>
                           )
                         )}
                       </ul>

@@ -12,3 +12,11 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Deployment
+
+[https://hkedia321.github.io/resume-lens/](https://hkedia321.github.io/resume-lens/)
+
+## Example
+
+![Example screenshot](/docs/image.png)
