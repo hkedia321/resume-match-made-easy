@@ -13,6 +13,26 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hkedia321/resume-lens.git
+   cd resume-lens
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser and visit:**
+   [http://localhost:8080](http://localhost:8080)
+
 ## Deployment
 
 [https://hkedia321.github.io/resume-lens/](https://hkedia321.github.io/resume-lens/)
